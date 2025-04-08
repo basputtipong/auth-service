@@ -31,7 +31,7 @@ func (s *verifySvc) Execute(req domain.VerifySvcReq) (domain.EmptyResponse, erro
 	fmt.Println(repoRes.Passcode, req.Passcode)
 
 	if err := utils.ComparePasscode(repoRes.Passcode, req.Passcode); err != nil {
-		return emptyRes, liberror.ErrorInternalServerError("passcode is not matched", err.Error())
+		return emptyRes, liberror.ErrorInternalServerError("passcode is not matched", "")
 	}
 
 	return emptyRes, nil
