@@ -12,6 +12,9 @@ db:
     maxopen: 10
     maxidle: 2
 
+whitelist:
+  domain: ["http://localhost:3000"]
+
 internal:
   private:
     key: |

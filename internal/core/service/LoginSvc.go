@@ -10,11 +10,11 @@ import (
 )
 
 type loginSvc struct {
-	loginRepo port.LoginRepo
+	usersRepo port.UsersRepo
 }
 
-func NewLoginSvc(repo port.LoginRepo) domain.LoginService {
-	return &loginSvc{loginRepo: repo}
+func NewLoginSvc(repo port.UsersRepo) domain.LoginService {
+	return &loginSvc{usersRepo: repo}
 }
 
 func (s *loginSvc) Execute(req domain.LoginSvcReq) (*domain.LoginSvcRes, error) {
@@ -27,11 +27,11 @@ func (s *loginSvc) Execute(req domain.LoginSvcReq) (*domain.LoginSvcRes, error) 
 		return nil, liberror.ErrorInternalServerError("failed to hash passcode", err.Error())
 	}
 
-	repoReq := port.LoginRepoReq{
+	repoReq := port.UsersRepoReq{
 		UserId:   req.UserId,
 		Passcode: hashedPasscode,
 	}
-	err = s.loginRepo.Insert(repoReq)
+	err = s.usersRepo.Insert(repoReq)
 	if err != nil {
 		return nil, err
 	}

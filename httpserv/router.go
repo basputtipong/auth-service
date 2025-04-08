@@ -6,13 +6,26 @@ import (
 	repository "auth-service/internal/adaptor/repo"
 	"auth-service/internal/core/service"
 
+	libmiddleware "github.com/basputtipong/library/middleware"
 	"github.com/gin-gonic/gin"
 )
 
 func bindLoginRoute(app *gin.Engine) {
-	repo := repository.NewLoginRepo(infrastructure.DB)
+	repo := repository.NewUsersRepo(infrastructure.DB)
 	svc := service.NewLoginSvc(repo)
 	hdl := handler.NewLoginHandler(svc)
 
 	app.POST("/login", hdl.Handle)
+}
+
+func bindVerifyRoute(app *gin.Engine) {
+	repo := repository.NewUsersRepo(infrastructure.DB)
+	svc := service.NewVerifySvc(repo)
+	hdl := handler.NewVerifyHandler(svc)
+
+	app.POST(
+		"/verify",
+		libmiddleware.JWTMiddleware(),
+		hdl.Handle,
+	)
 }

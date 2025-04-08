@@ -6,4 +6,5 @@ import (
 
 func InitMiddleware() {
 	libmiddleware.Init()
+	libmiddleware.InitCorsConfig()
 }

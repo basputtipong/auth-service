@@ -1,10 +1,11 @@
 package port
 
-type LoginRepo interface {
-	Insert(LoginRepoReq) error
+type UsersRepo interface {
+	Insert(req UsersRepoReq) error
+	GetByUserId(userId string) (Users, error)
 }
 
-type LoginRepoReq struct {
+type UsersRepoReq struct {
 	UserId   string `json:"userId"`
 	Passcode string `json:"passcode"`
 }
