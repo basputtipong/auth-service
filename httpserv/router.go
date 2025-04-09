@@ -29,3 +29,7 @@ func bindVerifyRoute(app *gin.Engine) {
 		hdl.Handle,
 	)
 }
+
+func bindHelthRoute(app *gin.Engine) {
+	app.GET("/health", handler.HealthHandle)
+}

@@ -15,6 +15,8 @@ func Run() {
 	bindLoginRoute(app)
 	bindVerifyRoute(app)
 
+	bindHelthRoute(app)
+
 	port := viper.GetString("app.port")
 	if port == "" {
 		port = "8080"
