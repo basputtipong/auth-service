@@ -9,7 +9,7 @@
 #### To run test  
 - `make test`  
 ***
-#### The service will serve as `http://localhost:1300`  
+#### The service will serve as `http://localhost:1300` which contain path below  
 - *`/login` for login with userId and passcode*  
 - *`/verify` for verify user passcode*  
 ***
