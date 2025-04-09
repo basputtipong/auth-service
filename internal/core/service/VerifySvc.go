@@ -4,7 +4,6 @@ import (
 	"auth-service/internal/core/domain"
 	"auth-service/internal/core/port"
 	"auth-service/utils"
-	"fmt"
 
 	liberror "github.com/basputtipong/library/error"
 )
@@ -17,22 +16,22 @@ func NewVerifySvc(repo port.UsersRepo) domain.VerifyService {
 	return &verifySvc{usersRepo: repo}
 }
 
-func (s *verifySvc) Execute(req domain.VerifySvcReq) (domain.EmptyResponse, error) {
-	var emptyRes domain.EmptyResponse
+func (s *verifySvc) Execute(req domain.VerifySvcReq) (domain.VerifySvcRes, error) {
+	var res domain.VerifySvcRes
 	if err := utils.Validate(req); err != nil {
-		return emptyRes, liberror.ErrorBadRequest("Invalid request", err.Error())
+		return res, liberror.ErrorBadRequest("Invalid request", err.Error())
 	}
 
-	repoRes, err := s.usersRepo.GetByUserId(req.UserId)
+	repoRes, err := s.usersRepo.GetGreetingByUserId(req.UserId)
 	if err != nil {
-		return emptyRes, err
+		return res, err
 	}
-
-	fmt.Println(repoRes.Passcode, req.Passcode)
 
 	if err := utils.ComparePasscode(repoRes.Passcode, req.Passcode); err != nil {
-		return emptyRes, liberror.ErrorInternalServerError("passcode is not matched", "")
+		return res, liberror.ErrorInternalServerError("passcode is not matched", "")
 	}
 
-	return emptyRes, nil
+	res.Name = repoRes.Name
+	res.GreetingMsg = repoRes.Greeting
+	return res, nil
 }

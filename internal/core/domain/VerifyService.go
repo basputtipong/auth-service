@@ -1,7 +1,7 @@
 package domain
 
 type VerifyService interface {
-	Execute(req VerifySvcReq) (EmptyResponse, error)
+	Execute(req VerifySvcReq) (VerifySvcRes, error)
 }
 
 type VerifySvcReq struct {
@@ -9,4 +9,7 @@ type VerifySvcReq struct {
 	Passcode string `json:"passcode" validate:"required"`
 }
 
-type EmptyResponse struct{}
+type VerifySvcRes struct {
+	Name        string `json:"name"`
+	GreetingMsg string `json:"greetingMsg"`
+}
