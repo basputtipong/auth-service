@@ -10,7 +10,8 @@
 - `make test`  
 ***
 #### The service will serve as `http://localhost:1300` which contain path below  
-- *`/login` for login with userId and passcode*  
-- *`/verify` for verify user passcode*  
+- *`POST /login` for login with userId and passcode*  
+- *`POST /verify` for verify user passcode*  
+- *`GET /health` for service health checking*  
 ***
 ##### *See Makefile for other command*
