@@ -30,7 +30,7 @@ docker-restart:
 	docker-compose -f $(COMPOSE_FILE) up -d --build --force-recreate
 
 docker-shell:
-	docker exec -it auth_service sh
+	docker exec -it $(APP_NAME) sh
 
 docker-clean:
 	docker image rm $(DOCKER_IMAGE)
