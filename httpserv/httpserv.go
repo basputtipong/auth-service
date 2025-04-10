@@ -14,6 +14,7 @@ func Run() {
 
 	bindLoginRoute(app)
 	bindVerifyRoute(app)
+	bindBannerRoute(app)
 
 	bindHelthRoute(app)
 

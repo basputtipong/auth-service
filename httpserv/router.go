@@ -30,6 +30,14 @@ func bindVerifyRoute(app *gin.Engine) {
 	)
 }
 
+func bindBannerRoute(app *gin.Engine) {
+	repo := repository.NewBannerRepo(infrastructure.DB)
+	svc := service.NewBannerSvc(repo)
+	hdl := handler.NewBannerHandler(svc)
+
+	app.GET("/banner", libmiddleware.JWTMiddleware(), hdl.Handle)
+}
+
 func bindHelthRoute(app *gin.Engine) {
 	app.GET("/health", handler.HealthHandle)
 }

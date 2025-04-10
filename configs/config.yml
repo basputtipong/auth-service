@@ -1,6 +1,6 @@
 app:
   name: auth-service
-  port: 1300
+  port: 1301
 
 db:
   host: localhost
