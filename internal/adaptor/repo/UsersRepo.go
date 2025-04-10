@@ -17,7 +17,7 @@ func NewUsersRepo(db *gorm.DB) port.UsersRepo {
 	return &usersRepo{db: db}
 }
 
-func (r *usersRepo) Insert(req port.UsersRepoReq) error {
+func (r *usersRepo) UpdatePasscodeByUserId(req port.UsersRepoReq) error {
 	tx := r.db.Begin()
 
 	res := tx.Model(&port.Users{}).

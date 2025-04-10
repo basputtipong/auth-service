@@ -10,11 +10,15 @@ import (
 )
 
 type loginSvc struct {
-	usersRepo port.UsersRepo
+	usersRepo    port.UsersRepo
+	jwtGenerator libmiddleware.JWTGenerator
 }
 
-func NewLoginSvc(repo port.UsersRepo) domain.LoginService {
-	return &loginSvc{usersRepo: repo}
+func NewLoginSvc(repo port.UsersRepo, jwtGenerator libmiddleware.JWTGenerator) domain.LoginService {
+	return &loginSvc{
+		usersRepo:    repo,
+		jwtGenerator: jwtGenerator,
+	}
 }
 
 func (s *loginSvc) Execute(req domain.LoginSvcReq) (*domain.LoginSvcRes, error) {
@@ -31,13 +35,13 @@ func (s *loginSvc) Execute(req domain.LoginSvcReq) (*domain.LoginSvcRes, error) 
 		UserId:   req.UserId,
 		Passcode: hashedPasscode,
 	}
-	err = s.usersRepo.Insert(repoReq)
+	err = s.usersRepo.UpdatePasscodeByUserId(repoReq)
 	if err != nil {
 		return nil, err
 	}
 
 	var res domain.LoginSvcRes
-	token, err := libmiddleware.GenerateJWT(req.UserId)
+	token, err := s.jwtGenerator.Generate(req.UserId)
 	if err != nil {
 		return nil, liberror.ErrorInternalServerError("failed to generate token", err.Error())
 	}

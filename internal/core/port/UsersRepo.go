@@ -1,7 +1,7 @@
 package port
 
 type UsersRepo interface {
-	Insert(req UsersRepoReq) error
+	UpdatePasscodeByUserId(req UsersRepoReq) error
 	GetByUserId(userId string) (Users, error)
 	GetGreetingByUserId(userId string) (UsersWithGreeting, error)
 }

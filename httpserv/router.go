@@ -11,8 +11,9 @@ import (
 )
 
 func bindLoginRoute(app *gin.Engine) {
+	jwtGenerator := libmiddleware.NewJWTGenerator()
 	repo := repository.NewUsersRepo(infrastructure.DB)
-	svc := service.NewLoginSvc(repo)
+	svc := service.NewLoginSvc(repo, jwtGenerator)
 	hdl := handler.NewLoginHandler(svc)
 
 	app.POST("/login", hdl.Handle)
@@ -25,7 +26,7 @@ func bindVerifyRoute(app *gin.Engine) {
 
 	app.POST(
 		"/verify",
-		libmiddleware.JWTMiddleware(),
+		libmiddleware.JWTVerify(),
 		hdl.Handle,
 	)
 }
@@ -35,7 +36,7 @@ func bindBannerRoute(app *gin.Engine) {
 	svc := service.NewBannerSvc(repo)
 	hdl := handler.NewBannerHandler(svc)
 
-	app.GET("/banner", libmiddleware.JWTMiddleware(), hdl.Handle)
+	app.GET("/banner", libmiddleware.JWTVerify(), hdl.Handle)
 }
 
 func bindHelthRoute(app *gin.Engine) {
