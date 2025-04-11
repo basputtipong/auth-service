@@ -11,6 +11,7 @@ db:
   connection:
     maxopen: 10
     maxidle: 2
+    maxlifetime: 5
 
 whitelist:
   domain: ["http://localhost:3000"]

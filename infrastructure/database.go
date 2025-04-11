@@ -2,6 +2,7 @@ package infrastructure
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
@@ -18,8 +19,9 @@ type DBConfig struct {
 }
 
 type SqlConnectionConfig struct {
-	MaxOpen *int `mapstructure:"maxopen"`
-	MaxIdle *int `mapstructure:"maxidle"`
+	MaxOpen     *int `mapstructure:"maxopen"`
+	MaxIdle     *int `mapstructure:"maxidle"`
+	MaxLifetime *int `mapstructure:"maxlifetime"`
 }
 
 var (
@@ -56,6 +58,12 @@ func InitDB() {
 		sqlDb.SetMaxIdleConns(*dbConfig.Connection.MaxIdle)
 	} else {
 		sqlDb.SetMaxIdleConns(2)
+	}
+
+	if dbConfig.Connection.MaxLifetime != nil {
+		sqlDb.SetConnMaxLifetime(time.Minute * time.Duration(*dbConfig.Connection.MaxLifetime))
+	} else {
+		sqlDb.SetConnMaxLifetime(time.Minute * 5)
 	}
 
 	DB = db
