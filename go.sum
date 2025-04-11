@@ -1,5 +1,5 @@
-github.com/basputtipong/library v1.5.1 h1:UxZal1//xCJ07iF02lXcTASmrHyr7DUaJlHUqiDT7l0=
-github.com/basputtipong/library v1.5.1/go.mod h1:4MfxRQovfESJLyTWyndwvJmgBgRpt38nw0MsqDTu8xQ=
+github.com/basputtipong/library v1.5.2 h1:e6gNWeES4LOwbmps1oY1QPEY6PTSuR46+hhc2XPFo5M=
+github.com/basputtipong/library v1.5.2/go.mod h1:4MfxRQovfESJLyTWyndwvJmgBgRpt38nw0MsqDTu8xQ=
 github.com/bytedance/sonic v1.13.2 h1:8/H1FempDZqC4VqjptGo14QQlJx8VdZJegxs6wwfqpQ=
 github.com/bytedance/sonic v1.13.2/go.mod h1:o68xyaF9u2gvVBuGHPlUVCy+ZfmNNO5ETf1+KgkJhz4=
 github.com/bytedance/sonic/loader v0.1.1/go.mod h1:ncP89zfokxS5LZrJxl5z0UJcsk4M4yY2JpfqGeCtNLU=
