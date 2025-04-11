@@ -18,34 +18,7 @@ whitelist:
 internal:
   private:
     key: |
-      -----BEGIN PRIVATE KEY-----
-      MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDP+OmjnfLmK4oh
-      Zkk9JzIV9ZfPANqNsPmVRm+TCg2HcBqfVSNj2xYeO2aA2AupSNon0E9QKKgTsJU1
-      QLVfM4wvTTA94cbkoOM8OTLqw7S1qCsXE8EPdaeqVFL1vlcEULArY1Kq41idPHhe
-      VK2ghGUDKTNzjmw6Gn9J0jhTuXNTQznRl/i0NqhcTs7xuJlCfEHDAPew+hJW3ShW
-      7ttxGJJwXJeKAvZig8ppMukSMNNHX7TWTzPC/3Y9QdvyZKO6FpFoUyjKg2KNE2kd
-      hCBE+zRZqRBPhHvkFozhRCuf14F0BfSw1xJeyAHVrcsZOPvTpzYDX3CQBfvW4i0L
-      yCBzJoglAgMBAAECggEANz5OzZv4uCRLoliZzsk5GDUvGJkI9QdUHM9jduL+OgJQ
-      yA8lAfLh2rD7pvD8lACalmXSk5/hGa3XzJf+NaYrMCtoS5/MJdII2mf1OwA2YeSk
-      YZJpP5KIsYmJqeZgFfDbAwN0o5kVYlr8PE5w+okAjgjlNmZYIE0Gj9TsCm1iEXT4
-      42Sqr71LxCF6Np5TuJUD2jHP8UdZjHZdxaGUAp+4Ak3+NQwWiT7X+m3hV3CbMn0I
-      jf9ZcfeFAeT/hPtzJkGbOoT6hW2V32VpezbytoetwN/QfZyit0ww+/XwrAlBv0Oo
-      ZqgDs+U0lAL/Obkon8hrkTo1xqEd2XjcKgyk0z9DlwKBgQDuFI0JcSXE+tXYMkYh
-      HQTBEZMIhF3WMReLGZvpT8MYvbHF4dvPhWFQnAgmotOFhuSt0CWwezMB8eSWMfxP
-      CujtB5XiQUGk5vkRISfc5nMtciV/P/qUtXP2UeiyAfvxoEPGM41fRRq1OO73s0XA
-      hPfQY9P6OhXLRroAvjsstt7K0wKBgQDfoDn/jpftqTPBQVyn+EfjLCbD4yydnjuj
-      BNILBCemtgNB5y0bNlFU2ZZ+vbdG7VnUSE0m/8HSlkngkiqrOvFMaHElD4BaLIz9
-      QFC8Mm5n6HvGVRJUAOjrkeyuozRC0HsIvkPknWrLUZWvCwkKx7uENzwgUYc3D8Zy
-      J7shC2qWJwKBgQC9bE52l7a0Tdq8w+s2R29T6ZaxrRc35yFTRBHfhN22Hp+F0Njh
-      +L5fs3VswBpJX/UsMbL7AlqoDnyP379eaFDA3ksrlD4VZMwADAA6aoRzQSGCaDYI
-      AYL9FVht4NRC//9MgBHYHhRM4bqIC/PQZDsDa5npujNC48fz9WcBgZIrjwKBgE2I
-      PdOO2rn5igoc4UUTXckzi5Uq9FMJg1+30iMjo6O3Q1XcEtV2dahXcEgs+phKvnRN
-      RQKaddbPaHnF86k+XF7Db0cMItIg1BkR7WvyiDjab9+JqzsYvai/BTJfP0VTBvU3
-      Ek73DQnFFYKE7vOf4DGs/NmvqpO6knENuWFxldjNAoGBAI5W47tu/tki32PQAT8p
-      Vk7xwlV5Jc+giRHkHTa1vB1gE2eNA9sIOk/uEYulfF2FxplLhdDIhWQb0yDMHB7k
-      fFp4tVnifMKjmlss1s7Z4dOJT7kPQ7x1UcSV2b2lgE0PS9WmUDobYil48Z/x2vMk
-      HS+C/7FtwGV5pegdyaKRfhO0
-      -----END PRIVATE KEY-----
+
   public:
     key: |
       -----BEGIN PUBLIC KEY-----
